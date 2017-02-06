@@ -13,4 +13,4 @@ RUN \
     vim-tiny emacs-nox git \
     zsh \
     manpages man-db less rsync docker.io \
-    telnet netcat-openbsd tcpdump strace inetutils-ping bind9-host mtr-tiny
+    telnet netcat-openbsd tcpdump strace inetutils-ping bind9-host mtr-tiny procps
