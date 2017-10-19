@@ -7,8 +7,9 @@ RUN \
     echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/50default-release
 
 RUN \
-    apt-get -qy update && \
-    apt-get -qy upgrade && \
+    set -e -x; \
+    apt-get -qy update; \
+    apt-get -qy upgrade; \
     apt-get -qy install \
     vim-tiny emacs-nox git \
     zsh \
