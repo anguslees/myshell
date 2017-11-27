@@ -13,5 +13,5 @@ RUN \
     apt-get -qy install \
     vim-tiny emacs-nox git \
     zsh \
-    manpages man-db less rsync docker.io \
+    manpages man-db less rsync docker.io kubernetes-client \
     telnet netcat-openbsd tcpdump strace inetutils-ping bind9-host mtr-tiny procps
