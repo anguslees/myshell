@@ -21,7 +21,7 @@ RUN \
     zsh bash \
     sudo manpages procps man-db less rsync \
     docker.io kubernetes-client \
-    telnet netcat-openbsd curl tcpdump strace inetutils-ping bind9-host mtr-tiny openssh-client
+    telnet netcat-openbsd curl tcpdump strace inetutils-ping bind9-host mtr-tiny openssh-client dnsutils
 
 RUN echo 'user ALL=NOPASSWD: ALL' > /etc/sudoers.d/user
 
