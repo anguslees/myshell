@@ -4,5 +4,11 @@
     "docker:pinDigests",
     "group:allNonMajor",
     "schedule:weekly"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
   ]
 }
