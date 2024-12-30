@@ -1,4 +1,4 @@
-FROM debian:testing@sha256:52d9eacae5e6d813b01d8df534f28ce6fa7ccd50deb6647d94e69a81c8ba2abd
+FROM debian:testing@sha256:7d76af52371d2e8d4a912126402dbddd257d27937ab421f783a58029e3c7dd66
 MAINTAINER Angus Lees <gus@inodes.org>
 
 RUN \
