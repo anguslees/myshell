@@ -9,6 +9,18 @@ RUN \
 
 RUN \
     set -e -x; \
+    apt-get -qy update; \
+    apt-get -qy upgrade; \
+    apt-get -qy install \
+    vim-tiny emacs-nox git \
+    zsh bash adduser \
+    sudo manpages procps man-db less rsync \
+    docker.io kubernetes-client \
+    telnet netcat-openbsd curl tcpdump strace inetutils-ping bind9-host mtr-tiny openssh-client dnsutils \
+    gnupg curl wget
+
+RUN \
+    set -e -x; \
     mkdir -p --mode=0755 /usr/share/keyrings; \
     curl -fsSL https://pkgs.tailscale.com/stable/debian/forky.noarmor.gpg | tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null; \
     chmod 0644 /usr/share/keyrings/tailscale-archive-keyring.gpg; \
@@ -20,11 +32,6 @@ RUN \
     apt-get -qy update; \
     apt-get -qy upgrade; \
     apt-get -qy install \
-    vim-tiny emacs-nox git \
-    zsh bash adduser \
-    sudo manpages procps man-db less rsync \
-    docker.io kubernetes-client \
-    telnet netcat-openbsd curl tcpdump strace inetutils-ping bind9-host mtr-tiny openssh-client dnsutils \
     tailscale tailscale-archive-keyring
 
 RUN \
