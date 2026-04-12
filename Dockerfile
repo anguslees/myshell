@@ -16,7 +16,24 @@ RUN \
     zsh bash adduser \
     sudo manpages procps man-db less rsync \
     docker.io kubernetes-client \
-    telnet netcat-openbsd curl tcpdump strace inetutils-ping bind9-host mtr-tiny openssh-client dnsutils
+    telnet netcat-openbsd curl tcpdump strace inetutils-ping bind9-host mtr-tiny openssh-client dnsutils \
+    gnupg wget; \
+    rm -rf /var/lib/apt/lists/*
+
+RUN \
+    set -e -x; \
+    mkdir -p --mode=0755 /usr/share/keyrings; \
+    curl -fsSL https://pkgs.tailscale.com/stable/debian/forky.noarmor.gpg | tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null; \
+    chmod 0644 /usr/share/keyrings/tailscale-archive-keyring.gpg; \
+    curl -fsSL https://pkgs.tailscale.com/stable/debian/forky.tailscale-keyring.list | tee /etc/apt/sources.list.d/tailscale.list; \
+    chmod 0644 /etc/apt/sources.list.d/tailscale.list
+
+RUN \
+    set -e -x; \
+    apt-get -qy update; \
+    apt-get -qy install \
+    tailscale tailscale-archive-keyring; \
+    rm -rf /var/lib/apt/lists/*
 
 RUN \
     set -e -x; \
